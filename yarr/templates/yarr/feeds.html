@@ -11,6 +11,7 @@
 {{ block.super }}
 
 <h2>Add feed</h2>
+<a href="{% url 'yarr-feed_import' %}">Import Feeds</a>
 {% include "yarr/include/form_feed_add.html" %}
 
 
