@@ -71,6 +71,7 @@
     <div class="yarr_feed_list">
         <ul class="yarr_menu_feeds">
             <li><a href="{% url 'yarr-feed_add' %}">Add feed</a></li>
+            <li><a href="{% url 'yarr-feed_import' %}">Import feeds</a></li>
             <li><a href="{% url 'yarr-feeds' %}">Manage feeds</a></li>
             {% if feed %}
                 <li><a href="{% url current_view %}">View all feeds</a></li>

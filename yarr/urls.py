@@ -17,7 +17,7 @@ urlpatterns = patterns('yarr.views',
         {'saved': True},
         name="yarr-list_saved",
     ),
-    
+
     # Feed views
     url(r'^unread/(?P<feed_pk>\d+)/$', 'list_entries',
         name="yarr-list_unread"
@@ -30,7 +30,7 @@ urlpatterns = patterns('yarr.views',
         {'saved': True},
         name="yarr-list_saved",
     ),
-    
+
     # Feed management
     url(r'^feeds/$', 'feeds',
         name="yarr-feeds"
@@ -38,13 +38,16 @@ urlpatterns = patterns('yarr.views',
     url(r'^feeds/add/$', 'feed_form',
         name="yarr-feed_add",
     ),
+    url(r'^feeds/import/$', 'feed_import',
+        name="yarr-feed_import",
+    ),
     url(r'^feeds/(?P<feed_pk>\d+)/$', 'feed_form',
         name="yarr-feed_edit",
     ),
     url(r'^feeds/(?P<feed_pk>\d+)/delete/$', 'feed_delete',
         name="yarr-feed_delete",
     ),
-    
+
     # Flag management without javascript
     url(r'^read/$', 'mark_read',
         name="yarr-mark_all_read",
@@ -66,18 +69,18 @@ urlpatterns = patterns('yarr.views',
         {'is_saved': False},
         name="yarr-mark_unsaved",
     ),
-    
-    
-    
+
+
+
     #
     # JSON API
     #
-    
+
     url(r'^api/$', 'api_base', name='yarr-api_base'),
     url(r'^api/feed/get/$', 'api_feed_get', name='yarr-api_feed_get'),
     url(r'^api/entry/get/$', 'api_entry_get', name='yarr-api_entry_get'),
     url(r'^api/entry/set/$', 'api_entry_set', name='yarr-api_entry_set'),
-    
-    
+
+
 )
 

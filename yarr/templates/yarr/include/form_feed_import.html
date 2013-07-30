@@ -1,0 +1,11 @@
+{% load url from future %}
+
+<form enctype="multipart/form-data" action="{% url "yarr-feed_import" %}" method="POST" class="yarr_form" id="yarr_feed_import">
+{% csrf_token %}
+
+<table>
+{{ feed_form.as_table }}
+<tr><td></td><td><input type="submit" value="Import feeds" /></td></tr>
+</table>
+
+</form>

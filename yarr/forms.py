@@ -28,34 +28,34 @@ def _build_frequency_choices():
         hh = 0
         mm = current
         parts = []
-        
+
         if mm > DAY:
             dd = mm / DAY
             mm = mm % DAY
             parts.append('%s day%s' % (dd, 's' if dd > 1 else ''))
-            
+
         if mm > HOUR:
             hh = mm / HOUR
             mm = mm % HOUR
             parts.append('%s hour%s' % (hh, 's' if hh > 1 else ''))
-        
+
         if mm > 0:
             parts.append('%s minute%s' % (mm, 's' if mm > 1 else ''))
-        
+
         if len(parts) == 3:
             human = '%s, %s and %s' % tuple(parts)
         elif len(parts) == 2:
             human = '%s and %s' % tuple(parts)
         else:
             human = parts[0]
-        
+
         choices.append((current, human))
-        
+
         old = current
         current = int(current / 2)
         if old > MIN and current < MIN:
             current = MIN
-    
+
     return choices
 
 class EditFeedForm(forms.ModelForm):
@@ -73,3 +73,7 @@ class EditFeedForm(forms.ModelForm):
             'feed_url':     forms.TextInput(),
             'title':    forms.TextInput(),
         }
+
+
+class ImportFeedsForm(forms.Form):
+    import_file = forms.FileField(required=True)
