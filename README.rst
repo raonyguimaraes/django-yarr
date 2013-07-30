@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/sherzberg/django-yarr.png?branch=develop)](https://travis-ci.org/sherzberg/django-yarr)
+
 ====================================
 Django Yarr - Yet Another RSS Reader
 ====================================
