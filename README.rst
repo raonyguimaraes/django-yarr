@@ -1,5 +1,6 @@
 .. image:: https://travis-ci.org/sherzberg/django-yarr.png?branch=develop
 
+
 ====================================
 Django Yarr - Yet Another RSS Reader
 ====================================
